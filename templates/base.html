@@ -1,0 +1,78 @@
+<?xml version="1.1" encoding="UTF-8"?>
+{% load cms_tags %}{% load menu_tags %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>{% page_attribute page_title %} | Creative Cubes - mobile web solutions</title>
+		
+		<meta name="author" content="Creative Cubes - mobile web solutions">
+		<meta name="description" content="{% page_attribute meta_description %}">
+		<meta name="keywords" content="{% page_attribute meta_keywords %}">
+		
+		<link type="image/png" rel="shortcut icon"  href="{{ MEDIA_URL }}base/gfx/favicon.png" />
+		<link type="text/css" rel="stylesheet" href="{{ MEDIA_URL }}base/css/base.css" />
+		{% block stylesheet %}{% endblock stylesheet %}
+		
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		{% block javascript %}{% endblock javascript %}
+		
+		<script type="text/javascript">
+            function dbg(str) { if (typeof(console)=="undefined") return; else console.log(str); }
+            $(document).ready(function(){
+                var menu = $('ul#menu');
+                var menulink = $('ul#menu li a');
+                
+                $(menulink).find('span').hover(function () {
+                    $(this).stop().animate({
+                        opacity: 1
+                    }, 'slow');
+                }, function () {
+                    $(this).stop().animate({
+                        opacity: 0
+                    }, 'slow');
+                });
+            });
+		</script>
+	</head>
+	<body>
+	   <!-- id:wrapper -->
+	   <div id="wrapper">
+	       
+	       <!-- id:body -->
+	       <div id="body">
+	           
+	           <!-- id:head -->
+	           <div id="head">
+	               <div id="head-logo" class="left">
+	                   <a href="/"><img src="{{ MEDIA_URL }}base/gfx/creative-cubes-logo.png" alt="Creative Cubes - mobile web solutions" /></a>
+	               </div>
+	               <div id="socialmedia" class="right">
+	                   <a href="#" class="fb social left"></a>
+	                   <a href="https://twitter.com/creative_cubes" class="twitter social left"></a>
+	               </div>
+	               <div class="clear"></div>
+	           </div>
+	           <!-- id:head -->
+	           
+	           <!-- id:navigation -->
+	           <div id="navigation">
+	               <ul id="menu">
+	                   {% show_menu_below_id "root" 0 100 0 100 "cms/navigation.html" %}
+	               </ul>
+	           </div>
+	           <!-- id:navigation -->
+	       </div>
+	       <!-- id:body -->
+	       
+	       <!-- id:wrapper-foot -->
+	       <div id="wrapper-foot">
+	           <div id="foot">
+	           </div>
+	       </div>
+	       <!-- id:wrapper-foot -->
+	       
+	   </div>
+	   <!-- id:wrapper -->
+	</body>
+</html>

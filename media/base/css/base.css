@@ -1,0 +1,36 @@
+html, body {height: 100%;}
+body {margin:0;padding:0;background:url('../gfx/bg.png') repeat;font-family:Arial;font-size:10pt;}
+a img { border: 0px none; }
+*, * focus { outline: medium none; }
+
+.left {float:left;}
+.right {float:right;}
+.clear {clear:both;}
+
+#wrapper {min-width:891px;width:100%; min-height:100%;position:relative;background:url('../gfx/wrapper-bg.png') no-repeat center top;}
+#wrapper-foot {width:100%;position:absolute;height:250px;border-top:1px solid #151515;bottom:0px;background:url('../gfx/wrapper-foot-bg.png') repeat-x;}
+
+#head {width:891px;height:201px;}
+
+#head-logo {width:280px;padding:46px 0 0 0;}
+#quotes {}
+#socialmedia {width:140px;height:71px;}
+
+#socialmedia a.fb {width:67px;height:71px;display:block;background:url('../gfx/fb-icon.png') no-repeat;margin-right:6px;}
+#socialmedia a.twitter {width:67px;height:71px;display:block;background:url('../gfx/twitter-icon.png') no-repeat;}
+#socialmedia a.social {background-position: 0px 0px}
+#socialmedia a.social:hover {background-position: 0px -71px}
+
+#body {width:891px;padding:0px 9px 341px 9px;margin:0px auto;}
+
+#navigation {width:280px;height:600px;}
+ul#menu {margin:0;padding:0;width:280px;list-style:none;}
+ul#menu li {width:280px;height:80px;}
+ul#menu li a {width:280px;height:80px;display:block;position:relative;}
+ul#menu li a.active {background-position:-560px 0px;}
+ul#menu li a.startseite {background:url('../gfx/a-startseite.png');}
+ul#menu li a.startseite span {background:url('../gfx/a-startseite.png') -560px 0px;display:block;position:absolute;top:0;left:0;height:100%;width:100%;z-index:100;opacity:0;cursor:pointer;}
+
+#content {}
+
+#foot {width:891px;height:250px;}
